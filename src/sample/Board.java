@@ -24,12 +24,12 @@ public class Board {
     @FXML
     private Label labelText;
 
-    Image one = new Image(new FileInputStream("D:\\Study Materials\\SnakeAndLadder\\src\\Image\\1.png"));
-    Image two = new Image(new FileInputStream("D:\\Study Materials\\SnakeAndLadder\\src\\Image\\2.png"));
-    Image three = new Image(new FileInputStream("D:\\Study Materials\\SnakeAndLadder\\src\\Image\\3.png"));
-    Image four = new Image(new FileInputStream("D:\\Study Materials\\SnakeAndLadder\\src\\Image\\4.png"));
-    Image five = new Image(new FileInputStream("D:\\Study Materials\\SnakeAndLadder\\src\\Image\\5.png"));
-    Image six = new Image(new FileInputStream("D:\\Study Materials\\SnakeAndLadder\\src\\Image\\6.png"));
+    Image one = new Image(new FileInputStream("src\\Image\\1.png"));
+    Image two = new Image(new FileInputStream("src\\Image\\2.png"));
+    Image three = new Image(new FileInputStream("src\\Image\\3.png"));
+    Image four = new Image(new FileInputStream("src\\Image\\4.png"));
+    Image five = new Image(new FileInputStream("src\\Image\\5.png"));
+    Image six = new Image(new FileInputStream("src\\Image\\6.png"));
 
     public Board() throws FileNotFoundException {
 
