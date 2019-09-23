@@ -40,6 +40,53 @@ public class Home {
     @FXML
     private TextField play4;
 
+
+
+
+    @FXML
+    void TwoSelected(ActionEvent event) {
+        play1.setEditable(true);
+        play2.setEditable(true);
+
+        ThreePlayer.setSelected(false);
+        FourPlayer.setSelected(false);
+
+        play3.setEditable(false);
+        play3.clear();
+        play4.setEditable(false);
+        play4.clear();
+
+    }
+
+
+    @FXML
+    void ThreeSelected(ActionEvent event) {
+        play1.setEditable(true);
+        play2.setEditable(true);
+        play3.setEditable(true);
+
+        TwoPlayer.setSelected(false);
+        FourPlayer.setSelected(false);
+
+        play4.setEditable(false);
+        play4.clear();
+
+    }
+
+
+
+    @FXML
+    void FourSelected(ActionEvent event) {
+        play1.setEditable(true);
+        play2.setEditable(true);
+        play3.setEditable(true);
+        play4.setEditable(true);
+
+        TwoPlayer.setSelected(false);
+        ThreePlayer.setSelected(false);
+
+    }
+
     @FXML
     void StartGame(ActionEvent event) {
 

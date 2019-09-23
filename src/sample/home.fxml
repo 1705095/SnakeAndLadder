@@ -16,17 +16,17 @@
             <Image url="@../Image/bk.jpg" />
          </image>
       </ImageView>
-      <CheckBox fx:id="TwoPlayer" layoutX="201.0" layoutY="508.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="219.0" text="2 Player" textFill="WHITE">
+      <CheckBox fx:id="TwoPlayer" layoutX="201.0" layoutY="508.0" mnemonicParsing="false" onAction="#TwoSelected" prefHeight="62.0" prefWidth="219.0" text="2 Player" textFill="WHITE">
          <font>
             <Font size="32.0" />
          </font>
       </CheckBox>
-      <CheckBox fx:id="ThreePlayer" layoutX="201.0" layoutY="570.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="219.0" text="3 Player" textFill="WHITE">
+      <CheckBox fx:id="ThreePlayer" layoutX="201.0" layoutY="570.0" mnemonicParsing="false" onAction="#ThreeSelected" prefHeight="62.0" prefWidth="219.0" text="3 Player" textFill="WHITE">
          <font>
             <Font size="32.0" />
          </font>
       </CheckBox>
-      <CheckBox fx:id="FourPlayer" layoutX="201.0" layoutY="632.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="219.0" text="4 Player" textFill="WHITE">
+      <CheckBox fx:id="FourPlayer" layoutX="201.0" layoutY="632.0" mnemonicParsing="false" onAction="#FourSelected" prefHeight="62.0" prefWidth="219.0" text="4 Player" textFill="WHITE">
          <font>
             <Font size="32.0" />
          </font>
@@ -36,22 +36,22 @@
             <Font size="32.0" />
          </font>
       </Button>
-      <TextField fx:id="play1" layoutX="681.0" layoutY="486.0" prefHeight="31.0" prefWidth="319.0" promptText="Player 1 Name">
+      <TextField fx:id="play1" editable="false" layoutX="681.0" layoutY="486.0" prefHeight="31.0" prefWidth="319.0" promptText="Player 1 Name">
          <font>
             <Font size="20.0" />
          </font>
       </TextField>
-      <TextField fx:id="play2" layoutX="681.0" layoutY="539.0" prefHeight="31.0" prefWidth="319.0" promptText="Player 2 Name">
+      <TextField fx:id="play2" editable="false" layoutX="681.0" layoutY="539.0" prefHeight="31.0" prefWidth="319.0" promptText="Player 2 Name">
          <font>
             <Font size="20.0" />
          </font>
       </TextField>
-      <TextField fx:id="play3" layoutX="681.0" layoutY="594.0" prefHeight="31.0" prefWidth="319.0" promptText="Player 3 Name">
+      <TextField fx:id="play3" editable="false" layoutX="681.0" layoutY="594.0" prefHeight="31.0" prefWidth="319.0" promptText="Player 3 Name">
          <font>
             <Font size="20.0" />
          </font>
       </TextField>
-      <TextField fx:id="play4" layoutX="681.0" layoutY="650.0" prefHeight="31.0" prefWidth="319.0" promptText="Player 4 Name">
+      <TextField fx:id="play4" editable="false" layoutX="681.0" layoutY="650.0" prefHeight="31.0" prefWidth="319.0" promptText="Player 4 Name">
          <font>
             <Font size="20.0" />
          </font>
