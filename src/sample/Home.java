@@ -40,6 +40,8 @@ public class Home {
     @FXML
     private TextField play4;
 
+    public String name1 = "Player 1", name2 = "Player 2", name3 = "Player 3", name4 = "Player 4";
+
 
 
 
@@ -89,6 +91,30 @@ public class Home {
 
     @FXML
     void StartGame(ActionEvent event) {
+        if (TwoPlayer.isSelected()){
+            name1 = play1.getText();
+            name2 = play2.getText();
+            System.out.println(name1);
+            System.out.println(name3);
+        }
+        else if (ThreePlayer.isSelected()){
+            name1 = play1.getText();
+            name2 = play2.getText();
+            name3 = play3.getText();
+
+            System.out.println(name1);
+            System.out.println(name2);
+            System.out.println(name3);
+        }
+        else if (FourPlayer.isSelected()){
+            name1 = play1.getText();
+            name2 = play2.getText();
+            name3 = play3.getText();
+            name4 = play4.getText();
+        }
+        else {
+            System.out.println("Select player Number");
+        }
 
     }
 
