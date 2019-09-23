@@ -40,7 +40,10 @@ public class Home {
     @FXML
     private TextField play4;
 
-    public String name1 = "Player 1", name2 = "Player 2", name3 = "Player 3", name4 = "Player 4";
+    public String name1;
+    public String name2;
+    public String name3;
+    public String name4;
 
 
 
@@ -92,25 +95,86 @@ public class Home {
     @FXML
     void StartGame(ActionEvent event) {
         if (TwoPlayer.isSelected()){
-            name1 = play1.getText();
-            name2 = play2.getText();
+
+            if(play1.getText().isEmpty()) {
+                name1 = "Player 1";
+            }
+            else{
+                name1 = play1.getText();
+            }
+
+            if(play2.getText().isEmpty()) {
+                name2 = "Player 2";
+            }
+            else{
+                name2 = play2.getText();
+            }
+
             System.out.println(name1);
-            System.out.println(name3);
+            System.out.println(name2);
         }
         else if (ThreePlayer.isSelected()){
-            name1 = play1.getText();
-            name2 = play2.getText();
-            name3 = play3.getText();
+
+            if(play1.getText().isEmpty()) {
+                name1 = "Player 1";
+            }
+            else{
+                name1 = play1.getText();
+            }
+
+            if(play2.getText().isEmpty()) {
+                name2 = "Player 2";
+            }
+            else{
+                name2 = play2.getText();
+            }
+
+            if (play3.getText().isEmpty()){
+                name3 = "Player 3";
+            }
+            else{
+                name3 = play3.getText();
+            }
+
 
             System.out.println(name1);
             System.out.println(name2);
             System.out.println(name3);
         }
         else if (FourPlayer.isSelected()){
-            name1 = play1.getText();
-            name2 = play2.getText();
-            name3 = play3.getText();
-            name4 = play4.getText();
+
+            if(play1.getText().isEmpty()) {
+                name1 = "Player 1";
+            }
+            else{
+                name1 = play1.getText();
+            }
+
+            if(play2.getText().isEmpty()) {
+                name2 = "Player 2";
+            }
+            else{
+                name2 = play2.getText();
+            }
+
+            if (play3.getText().isEmpty()){
+                name3 = "Player 3";
+            }
+            else{
+                name3 = play3.getText();
+            }
+
+            if(play4.getText().isEmpty()){
+                name4 = "Player 4";
+            }
+            else {
+                name4 = play4.getText();
+            }
+
+            System.out.println(name1);
+            System.out.println(name2);
+            System.out.println(name3);
+            System.out.println(name4);
         }
         else {
             System.out.println("Select player Number");
