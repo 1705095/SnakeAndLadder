@@ -2,10 +2,10 @@ package sample;
 
 public class Player {
         int position;
-        int color;
+        String color;
         boolean stat;
 
-    public Player(int color) {
+    public Player(String color) {
         this.position = 0;
         this.color = color;
         this.stat = false;
@@ -19,11 +19,11 @@ public class Player {
         this.position = position;
     }
 
-    public int getColor() {
+    public String getColor() {
         return color;
     }
 
-    public void setColor(int color) {
+    public void setColor(String color) {
         this.color = color;
     }
 

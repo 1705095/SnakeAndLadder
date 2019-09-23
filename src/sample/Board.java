@@ -24,6 +24,18 @@ public class Board {
     @FXML
     private Label labelText;
 
+    @FXML
+    private ImageView player1;
+
+    @FXML
+    private ImageView player2;
+
+    @FXML
+    private ImageView player3;
+
+    @FXML
+    private ImageView player4;
+
     Image one = new Image(new FileInputStream("src\\Image\\1.png"));
     Image two = new Image(new FileInputStream("src\\Image\\2.png"));
     Image three = new Image(new FileInputStream("src\\Image\\3.png"));
@@ -35,7 +47,8 @@ public class Board {
     public Board() throws FileNotFoundException {
 
     }
-    Player player1, player2, player3, player4;
+
+
 
     @FXML
     void RollDice(ActionEvent event) {
