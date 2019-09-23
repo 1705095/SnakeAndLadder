@@ -2,11 +2,18 @@ package sample;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class Home {
 
@@ -93,7 +100,7 @@ public class Home {
     }
 
     @FXML
-    void StartGame(ActionEvent event) {
+    void StartGame(ActionEvent event) throws IOException {
         if (TwoPlayer.isSelected()){
 
             if(play1.getText().isEmpty()) {
@@ -112,7 +119,15 @@ public class Home {
 
             System.out.println(name1);
             System.out.println(name2);
+
+            Parent Tpage= FXMLLoader.load(getClass().getResource("board.fxml"));
+            Scene Tscne=new Scene(Tpage);
+            Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
+            window.setScene(Tscne);
+            window.show();
         }
+
+
         else if (ThreePlayer.isSelected()){
 
             if(play1.getText().isEmpty()) {
@@ -140,7 +155,15 @@ public class Home {
             System.out.println(name1);
             System.out.println(name2);
             System.out.println(name3);
+
+            Parent Tpage= FXMLLoader.load(getClass().getResource("board.fxml"));
+            Scene Tscne=new Scene(Tpage);
+            Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
+            window.setScene(Tscne);
+            window.show();
         }
+
+
         else if (FourPlayer.isSelected()){
 
             if(play1.getText().isEmpty()) {
@@ -175,6 +198,12 @@ public class Home {
             System.out.println(name2);
             System.out.println(name3);
             System.out.println(name4);
+
+            Parent Tpage= FXMLLoader.load(getClass().getResource("board.fxml"));
+            Scene Tscne=new Scene(Tpage);
+            Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
+            window.setScene(Tscne);
+            window.show();
         }
         else {
             System.out.println("Select player Number");

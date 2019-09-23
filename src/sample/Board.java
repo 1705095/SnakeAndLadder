@@ -31,9 +31,11 @@ public class Board {
     Image five = new Image(new FileInputStream("src\\Image\\5.png"));
     Image six = new Image(new FileInputStream("src\\Image\\6.png"));
 
+
     public Board() throws FileNotFoundException {
 
     }
+    Player player1, player2, player3, player4;
 
     @FXML
     void RollDice(ActionEvent event) {
