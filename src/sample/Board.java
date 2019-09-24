@@ -1,4 +1,5 @@
 package sample;
+import sample.Player;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -51,6 +52,8 @@ public class Board {
     @FXML
     private Button startButton;
 
+
+
     Image one = new Image(new FileInputStream("src\\Image\\1.png"));
     Image two = new Image(new FileInputStream("src\\Image\\2.png"));
     Image three = new Image(new FileInputStream("src\\Image\\3.png"));
@@ -63,8 +66,11 @@ public class Board {
     Image purple = new Image(new FileInputStream("src\\Image\\purple.png"));
     Image yellow = new Image(new FileInputStream("src\\Image\\yellow.png"));
 
-    Player p1,p2,p3,p4;
     Home home;
+    Player p1 = new Player("red");
+    Player p2 = new Player("blue");
+    Player p3 = new Player("yellow");
+    Player p4 = new Player("purple");
 
     public Board() throws FileNotFoundException {
     }
@@ -73,8 +79,14 @@ public class Board {
     void StartGame(ActionEvent event) {
         if (home.number == 2){
             player1.setImage(red);
+            p1.setPosition(0);
+            p1.setTurn(true);
+            p1.setStat(false);
 
             player2.setImage(blue);
+            p2.setPosition(0);
+            p2.setStat(false);
+            p2.setTurn(false);
 
 
             namePlayer1.setText(home.name1);
@@ -82,10 +94,19 @@ public class Board {
         }
         else if (home.number == 3){
             player1.setImage(red);
+            p1.setPosition(0);
+            p1.setTurn(true);
+            p1.setStat(false);
 
             player2.setImage(blue);
+            p2.setPosition(0);
+            p2.setTurn(false);
+            p2.setStat(false);
 
             player3.setImage(yellow);
+            p3.setPosition(0);
+            p3.setTurn(false);
+            p3.setStat(false);
 
             namePlayer1.setText(home.name1);
             namePlayer2.setText(home.name2);
@@ -94,12 +115,24 @@ public class Board {
         }
         else if (home.number == 4){
             player1.setImage(red);
+            p1.setPosition(0);
+            p1.setTurn(true);
+            p1.setStat(false);
 
             player2.setImage(blue);
+            p2.setPosition(0);
+            p2.setTurn(false);
+            p2.setStat(false);
 
             player3.setImage(yellow);
+            p3.setPosition(0);
+            p3.setTurn(false);
+            p3.setStat(false);
 
             player4.setImage(purple);
+            p4.setPosition(0);
+            p4.setTurn(false);
+            p4.setStat(false);
 
 
             namePlayer1.setText(home.name1);
@@ -113,6 +146,8 @@ public class Board {
         diceButton.setVisible(true);
         startButton.setVisible(false);
         startButton.setCancelButton(true);
+
+        diceButton.setText(home.name1);
 
 
     }
@@ -144,6 +179,19 @@ public class Board {
         }
         else if (x==6){
             diceImage.setImage(six);
+        }
+
+        if (p1.isTurn()){
+           // Turns.setText(home.name1);
+            p1.setTurn(false);
+            p2.setTurn(true);
+            diceButton.setText(home.name2);
+        }
+        else if (p2.isTurn()){
+            //Turns.setText(home.name2);
+            p2.setTurn(false);
+            p1.setTurn(true);
+            diceButton.setText(home.name1);
         }
 
 
