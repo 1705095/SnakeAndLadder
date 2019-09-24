@@ -190,6 +190,30 @@ public class Board {
         else if (p2.isTurn()){
             //Turns.setText(home.name2);
             p2.setTurn(false);
+
+            if (home.number==2){
+                p1.setTurn(true);
+                diceButton.setText(home.name1);
+            }
+            else{
+                p3.setTurn(true);
+                diceButton.setText(home.name3);
+            }
+        }
+        else if(p3.isTurn()){
+            p3.setTurn(false);
+
+            if (home.number == 3){
+                p1.setTurn(true);
+                diceButton.setText(home.name1);
+            }
+            else{
+                p4.setTurn(true);
+                diceButton.setText(home.name4);
+            }
+        }
+        else if (p4.isTurn()){
+            p4.setTurn(false);
             p1.setTurn(true);
             diceButton.setText(home.name1);
         }
