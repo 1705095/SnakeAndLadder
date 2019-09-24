@@ -4,11 +4,13 @@ public class Player {
         int position;
         String color;
         boolean stat;
+        boolean turn;
 
     public Player(String color) {
         this.position = 0;
         this.color = color;
         this.stat = false;
+        this.turn = false;
     }
 
     public int getPosition() {
@@ -34,4 +36,8 @@ public class Player {
     public void setStat(boolean stat) {
         this.stat = stat;
     }
+
+    public void setTurn(boolean turn) {this.turn = turn; }
+
+    public boolean isTurn() { return  turn; }
 }

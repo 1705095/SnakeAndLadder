@@ -8,6 +8,7 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
 <GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Board">
    <columnConstraints>
@@ -19,18 +20,27 @@
    <children>
       <AnchorPane prefHeight="887.0" prefWidth="1280.0">
          <children>
-            <ImageView fx:id="boardImage" fitHeight="887.0" fitWidth="1048.0" pickOnBounds="true">
+            <ImageView fx:id="boardImage" fitHeight="887.0" fitWidth="1048.0" opacity="0.22" pickOnBounds="true">
                <image>
                   <Image url="@../Image/snake.png" />
                </image>
             </ImageView>
             <ImageView fx:id="diceImage" fitHeight="150.0" fitWidth="200.0" layoutX="1055.0" layoutY="637.0" pickOnBounds="true" preserveRatio="true" />
-            <Button fx:id="diceButton" layoutX="1097.0" layoutY="812.0" mnemonicParsing="false" onAction="#RollDice" prefHeight="31.0" prefWidth="116.0" text="ROLL DICE" />
-            <Label fx:id="labelText" alignment="CENTER" contentDisplay="CENTER" layoutX="1074.0" layoutY="14.0" prefHeight="52.0" prefWidth="162.0" text="PLAYERS" />
-            <ImageView fx:id="player1" fitHeight="62.0" fitWidth="70.0" layoutX="1062.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="player2" fitHeight="62.0" fitWidth="70.0" layoutX="1062.0" layoutY="280.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="player3" fitHeight="62.0" fitWidth="70.0" layoutX="1062.0" layoutY="342.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="player4" fitHeight="62.0" fitWidth="70.0" layoutX="1062.0" layoutY="404.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="diceButton" layoutX="1097.0" layoutY="812.0" mnemonicParsing="false" onAction="#RollDice" prefHeight="31.0" prefWidth="116.0" text="ROLL DICE" visible="false" />
+            <Label fx:id="labelText" alignment="CENTER" contentDisplay="CENTER" layoutX="1074.0" layoutY="14.0" opacity="0.22" prefHeight="52.0" prefWidth="162.0" text="PLAYERS" />
+            <ImageView fx:id="player1" fitHeight="62.0" fitWidth="70.0" layoutX="1062.0" layoutY="218.0" pickOnBounds="true" />
+            <ImageView fx:id="player2" fitHeight="62.0" fitWidth="70.0" layoutX="1062.0" layoutY="280.0" pickOnBounds="true" />
+            <ImageView fx:id="player3" fitHeight="62.0" fitWidth="70.0" layoutX="1062.0" layoutY="342.0" pickOnBounds="true" />
+            <ImageView fx:id="player4" fitHeight="62.0" fitWidth="70.0" layoutX="1062.0" layoutY="404.0" pickOnBounds="true" />
+            <Label fx:id="namePlayer1" layoutX="1165.0" layoutY="234.0" prefHeight="31.0" prefWidth="96.0" />
+            <Label fx:id="namePlayer2" layoutX="1165.0" layoutY="296.0" prefHeight="31.0" prefWidth="96.0" />
+            <Label fx:id="namePlayer3" layoutX="1165.0" layoutY="351.0" prefHeight="31.0" prefWidth="96.0" />
+            <Label fx:id="namePlayer4" layoutX="1165.0" layoutY="420.0" prefHeight="31.0" prefWidth="96.0" />
+            <Button fx:id="startButton" layoutX="358.0" layoutY="389.0" mnemonicParsing="false" onAction="#StartGame" prefHeight="62.0" prefWidth="291.0" text="Start Game">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </children>

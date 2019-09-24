@@ -8,7 +8,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -47,10 +49,16 @@ public class Home {
     @FXML
     private TextField play4;
 
-    public String name1;
-    public String name2;
-    public String name3;
-    public String name4;
+    @FXML
+    private Label message;
+
+    public static String name1;
+    public static String name2;
+    public static String name3;
+    public static String name4;
+    public static int number;
+
+    Board board;
 
 
 
@@ -68,6 +76,12 @@ public class Home {
         play4.setEditable(false);
         play4.clear();
 
+        number = 2;
+
+
+
+
+
     }
 
 
@@ -83,6 +97,8 @@ public class Home {
         play4.setEditable(false);
         play4.clear();
 
+        number = 3;
+
     }
 
 
@@ -97,6 +113,17 @@ public class Home {
         TwoPlayer.setSelected(false);
         ThreePlayer.setSelected(false);
 
+        number = 4;
+
+    }
+
+    int NumofPlayer(){
+        if (TwoPlayer.isSelected())
+            return 2;
+        else if (ThreePlayer.isSelected())
+            return 3;
+        else
+            return 4;
     }
 
     @FXML
@@ -206,7 +233,7 @@ public class Home {
             window.show();
         }
         else {
-            System.out.println("Select player Number");
+            message.setText("Select Number Of Players");
         }
 
     }
