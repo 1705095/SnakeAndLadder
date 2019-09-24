@@ -37,7 +37,7 @@ public class Player {
         this.stat = stat;
     }
 
-    public void setTurn(boolean turn) {this.turn = turn; }
+    public void setTurn(boolean turn) { this.turn = turn; }
 
     public boolean isTurn() { return  turn; }
 }

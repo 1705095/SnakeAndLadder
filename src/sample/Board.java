@@ -73,14 +73,18 @@ public class Board {
     void StartGame(ActionEvent event) {
         if (home.number == 2){
             player1.setImage(red);
+
             player2.setImage(blue);
+
 
             namePlayer1.setText(home.name1);
             namePlayer2.setText(home.name2);
         }
         else if (home.number == 3){
             player1.setImage(red);
+
             player2.setImage(blue);
+
             player3.setImage(yellow);
 
             namePlayer1.setText(home.name1);
@@ -90,9 +94,13 @@ public class Board {
         }
         else if (home.number == 4){
             player1.setImage(red);
+
             player2.setImage(blue);
+
             player3.setImage(yellow);
+
             player4.setImage(purple);
+
 
             namePlayer1.setText(home.name1);
             namePlayer2.setText(home.name2);
@@ -137,6 +145,7 @@ public class Board {
         else if (x==6){
             diceImage.setImage(six);
         }
+
 
 
 
