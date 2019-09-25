@@ -53,6 +53,37 @@ public class Board {
     private Button startButton;
 
 
+    @FXML
+    private ImageView b1;
+
+    @FXML
+    private ImageView b2;
+
+    @FXML
+    private ImageView b3;
+
+    @FXML
+    private ImageView b4;
+
+    @FXML
+    private ImageView b5;
+
+    @FXML
+    private ImageView b6;
+
+    @FXML
+    private ImageView b8;
+
+    @FXML
+    private ImageView b7;
+
+    @FXML
+    private ImageView b9;
+
+    @FXML
+    private ImageView b10;
+
+
 
     Image one = new Image(new FileInputStream("src\\Image\\1.png"));
     Image two = new Image(new FileInputStream("src\\Image\\2.png"));
@@ -182,13 +213,22 @@ public class Board {
         }
 
         if (p1.isTurn()){
-           // Turns.setText(home.name1);
             p1.setTurn(false);
             p2.setTurn(true);
             diceButton.setText(home.name2);
+
+            if (p1.getPosition()==0 && x == 1) {
+                p1.setPosition(1);
+               // System.out.println(p1.getPosition());
+                b1.setImage(red);
+            }
+            else if (p1.getPosition()!=0){
+                p1.setPosition(p1.getPosition()+x);
+                System.out.println(p1.getPosition());
+            }
+
         }
         else if (p2.isTurn()){
-            //Turns.setText(home.name2);
             p2.setTurn(false);
 
             if (home.number==2){

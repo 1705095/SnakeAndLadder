@@ -41,6 +41,16 @@
                   <Font size="27.0" />
                </font>
             </Button>
+            <ImageView fx:id="b1" fitHeight="62.0" fitWidth="70.0" layoutX="63.0" layoutY="781.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="b2" fitHeight="62.0" fitWidth="70.0" layoutX="146.0" layoutY="781.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="b3" fitHeight="62.0" fitWidth="70.0" layoutX="240.0" layoutY="781.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="b4" fitHeight="62.0" fitWidth="70.0" layoutX="338.0" layoutY="781.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="b5" fitHeight="62.0" fitWidth="70.0" layoutX="434.0" layoutY="781.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="b6" fitHeight="62.0" fitWidth="70.0" layoutX="533.0" layoutY="781.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="b8" fitHeight="62.0" fitWidth="70.0" layoutX="742.0" layoutY="781.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="b7" fitHeight="62.0" fitWidth="70.0" layoutX="630.0" layoutY="781.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="b9" fitHeight="62.0" fitWidth="70.0" layoutX="825.0" layoutY="781.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="b10" fitHeight="62.0" fitWidth="70.0" layoutX="915.0" layoutY="781.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </AnchorPane>
    </children>

@@ -144,8 +144,6 @@ public class Home {
                 name2 = play2.getText();
             }
 
-            System.out.println(name1);
-            System.out.println(name2);
 
             Parent Tpage= FXMLLoader.load(getClass().getResource("board.fxml"));
             Scene Tscne=new Scene(Tpage);
@@ -178,10 +176,6 @@ public class Home {
                 name3 = play3.getText();
             }
 
-
-            System.out.println(name1);
-            System.out.println(name2);
-            System.out.println(name3);
 
             Parent Tpage= FXMLLoader.load(getClass().getResource("board.fxml"));
             Scene Tscne=new Scene(Tpage);
@@ -221,10 +215,6 @@ public class Home {
                 name4 = play4.getText();
             }
 
-            System.out.println(name1);
-            System.out.println(name2);
-            System.out.println(name3);
-            System.out.println(name4);
 
             Parent Tpage= FXMLLoader.load(getClass().getResource("board.fxml"));
             Scene Tscne=new Scene(Tpage);
