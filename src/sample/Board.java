@@ -1,5 +1,4 @@
 package sample;
-import sample.Player;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -93,6 +92,67 @@ public class Board {
     Player p4 = new Player("purple");
 
     public Board() throws FileNotFoundException {
+    }
+
+    String RePos(int n){
+        return "b" + String.valueOf(n);
+    }
+
+    boolean isSnake(int pos){
+        return pos == 17 || pos == 52 || pos == 57 || pos == 62 || pos == 88 || pos == 95 || pos == 97;
+    }
+
+    boolean isLadder(int pos){
+        return pos==3 || pos == 8 || pos == 28 || pos == 58 || pos == 75 || pos == 80 || pos == 90;
+    }
+
+    void Down(Player player){
+        if (player.getPosition() == 17){
+            player.setPosition(13);
+        }
+        else if (player.getPosition()==52){
+            player.setPosition(29);
+        }
+        else if (player.getPosition()==57){
+            player.setPosition(40);
+
+        }
+        else if (player.getPosition()==62){
+            player.setPosition(22);
+        }
+        else if (player.getPosition()==88){
+            player.setPosition(18);
+        }
+        else if (player.getPosition()==95){
+            player.setPosition(51);
+        }
+        else if (player.getPosition()==97){
+            player.setPosition(79);
+        }
+    }
+
+    void Up(Player player){
+        if (player.getPosition()==3){
+            player.setPosition(21);
+        }
+        else if (player.getPosition()==8){
+            player.setPosition(30);
+        }
+        else if (player.getPosition()==28){
+            player.setPosition(84);
+        }
+        else if (player.getPosition()==58){
+            player.setPosition(77);
+        }
+        else if (player.getPosition()==75){
+            player.setPosition(86);
+        }
+        else if (player.getPosition()==80){
+            player.setPosition(100);
+        }
+        else if (player.getPosition()==90){
+            player.setPosition(91);
+        }
     }
 
     @FXML
@@ -202,19 +262,27 @@ public class Board {
         }
 
         if (p1.isTurn()){
-            p1.setTurn(false);
-            p2.setTurn(true);
-            diceButton.setText(home.name2);
+             p1.setTurn(false);
+
 
             if (p1.getPosition()==0 && x == 1) {
                 p1.setPosition(1);
+
                // System.out.println(p1.getPosition());
+                String pos = RePos(p1.getPosition());
+                System.out.println(pos);
                 b1.setImage(red);
+
             }
             else if (p1.getPosition()!=0){
                 p1.setPosition(p1.getPosition()+x);
-                System.out.println(p1.getPosition());
+               // System.out.println(p1.getPosition());
+                String pos = RePos(p1.getPosition());
+                System.out.println(pos);
             }
+
+            p2.setTurn(true);
+            diceButton.setText(home.name2);
 
         }
         else if (p2.isTurn()){
