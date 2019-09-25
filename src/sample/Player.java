@@ -1,10 +1,10 @@
 package sample;
 
 public class Player {
-        int position;
-        String color;
-        boolean stat;
-        boolean turn;
+        private int position;
+        private String color;
+        private boolean stat;
+        private boolean turn;
 
     public Player(String color) {
         this.position = 0;
