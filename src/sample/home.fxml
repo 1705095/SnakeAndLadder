@@ -31,27 +31,27 @@
             <Font size="32.0" />
          </font>
       </CheckBox>
-      <Button fx:id="gameButton" layoutX="840.0" layoutY="747.0" mnemonicParsing="false" onAction="#StartGame" prefHeight="69.0" prefWidth="229.0" text="Start Game">
+      <Button fx:id="gameButton" layoutX="840.0" layoutY="747.0" mnemonicParsing="false" onAction="#StartGame" prefHeight="69.0" prefWidth="229.0" stylesheets="@simpleCSS.css" text="Start Game">
          <font>
             <Font size="32.0" />
          </font>
       </Button>
-      <TextField fx:id="play1" editable="false" layoutX="681.0" layoutY="486.0" prefHeight="31.0" prefWidth="319.0" promptText="Player 1 Name">
+      <TextField fx:id="play1" editable="false" layoutX="681.0" layoutY="486.0" prefHeight="31.0" prefWidth="319.0" promptText="Player 1 Name" stylesheets="@simpleCSS.css">
          <font>
             <Font size="20.0" />
          </font>
       </TextField>
-      <TextField fx:id="play2" editable="false" layoutX="681.0" layoutY="539.0" prefHeight="31.0" prefWidth="319.0" promptText="Player 2 Name">
+      <TextField fx:id="play2" editable="false" layoutX="681.0" layoutY="539.0" prefHeight="31.0" prefWidth="319.0" promptText="Player 2 Name" stylesheets="@simpleCSS.css">
          <font>
             <Font size="20.0" />
          </font>
       </TextField>
-      <TextField fx:id="play3" editable="false" layoutX="681.0" layoutY="594.0" prefHeight="31.0" prefWidth="319.0" promptText="Player 3 Name">
+      <TextField fx:id="play3" editable="false" layoutX="681.0" layoutY="594.0" prefHeight="31.0" prefWidth="319.0" promptText="Player 3 Name" stylesheets="@simpleCSS.css">
          <font>
             <Font size="20.0" />
          </font>
       </TextField>
-      <TextField fx:id="play4" editable="false" layoutX="681.0" layoutY="650.0" prefHeight="31.0" prefWidth="319.0" promptText="Player 4 Name">
+      <TextField fx:id="play4" editable="false" layoutX="681.0" layoutY="650.0" prefHeight="31.0" prefWidth="319.0" promptText="Player 4 Name" stylesheets="@simpleCSS.css">
          <font>
             <Font size="20.0" />
          </font>
