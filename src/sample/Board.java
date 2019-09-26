@@ -308,7 +308,7 @@ public class Board {
                 p2.setPosition(1);
                 String pos = RePos(p2.getPosition());
                 System.out.println(pos);
-                b2.setImage(blue);
+                b1.setImage(blue);
                 player2.setVisible(false);
 
             }
@@ -353,7 +353,7 @@ public class Board {
                 p3.setPosition(1);
                 String pos = RePos(p3.getPosition());
                 System.out.println(pos);
-                b3.setImage(yellow);
+                b1.setImage(yellow);
                 player3.setVisible(false);
 
             }
