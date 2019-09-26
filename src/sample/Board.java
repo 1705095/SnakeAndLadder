@@ -107,15 +107,17 @@ public class Board {
     }
 
     void Down(Player player){
+        // have to add picture implementation
         if (player.getPosition() == 17){
             player.setPosition(13);
+
         }
         else if (player.getPosition()==52){
             player.setPosition(29);
+
         }
         else if (player.getPosition()==57){
             player.setPosition(40);
-
         }
         else if (player.getPosition()==62){
             player.setPosition(22);
@@ -132,6 +134,7 @@ public class Board {
     }
 
     void Up(Player player){
+        // have to add picture implementation
         if (player.getPosition()==3){
             player.setPosition(21);
         }
@@ -267,18 +270,29 @@ public class Board {
 
             if (p1.getPosition()==0 && x == 1) {
                 p1.setPosition(1);
-
-               // System.out.println(p1.getPosition());
                 String pos = RePos(p1.getPosition());
                 System.out.println(pos);
                 b1.setImage(red);
+                player1.setVisible(false);
 
             }
-            else if (p1.getPosition()!=0){
+            else if (p1.getPosition()!=0 && !p1.isStat()){
                 p1.setPosition(p1.getPosition()+x);
-               // System.out.println(p1.getPosition());
-                String pos = RePos(p1.getPosition());
-                System.out.println(pos);
+                // set image
+                if (p1.getPosition()==100){
+                        namePlayer1.setText("WINNER");
+                        p1.setStat(true);
+                }
+                if (isSnake(p1.getPosition())){
+                    Down(p1);
+                    // To do: set image here
+                }
+                else if (isLadder(p1.getPosition())){
+                    Up(p1);
+
+                    // set image here
+                }
+
             }
 
             p2.setTurn(true);
@@ -287,6 +301,35 @@ public class Board {
         }
         else if (p2.isTurn()){
             p2.setTurn(false);
+
+            // necessary codes
+
+            if (p2.getPosition()==0 && x == 1) {
+                p2.setPosition(1);
+                String pos = RePos(p2.getPosition());
+                System.out.println(pos);
+                b2.setImage(blue);
+                player2.setVisible(false);
+
+            }
+            else if (p2.getPosition()!=0 && !p2.isStat()){
+                p2.setPosition(p2.getPosition()+x);
+                // set image
+                if (p2.getPosition()==100){
+                    namePlayer2.setText("WINNER");
+                    p2.setStat(true);
+                }
+                if (isSnake(p2.getPosition())){
+                    Down(p2);
+                    // To do: set image here
+                }
+                else if (isLadder(p2.getPosition())){
+                    Up(p2);
+
+                    // set image here
+                }
+
+            }
 
             if (home.number==2){
                 p1.setTurn(true);
@@ -297,8 +340,41 @@ public class Board {
                 diceButton.setText(home.name3);
             }
         }
+
+
+
         else if(p3.isTurn()){
             p3.setTurn(false);
+
+            // necessary codes
+
+
+            if (p3.getPosition()==0 && x == 1) {
+                p3.setPosition(1);
+                String pos = RePos(p3.getPosition());
+                System.out.println(pos);
+                b3.setImage(yellow);
+                player3.setVisible(false);
+
+            }
+            else if (p3.getPosition()!=0 && !p3.isStat()){
+                p3.setPosition(p3.getPosition()+x);
+                // set image
+                if (p3.getPosition()==100){
+                    namePlayer3.setText("WINNER");
+                    p3.setStat(true);
+                }
+                if (isSnake(p3.getPosition())){
+                    Down(p3);
+                    // To do: set image here
+                }
+                else if (isLadder(p3.getPosition())){
+                    Up(p3);
+
+                    // set image here
+                }
+
+            }
 
             if (home.number == 3){
                 p1.setTurn(true);
@@ -310,6 +386,37 @@ public class Board {
             }
         }
         else if (p4.isTurn()){
+
+            // necessary codes
+
+
+            if (p4.getPosition()==0 && x == 1) {
+                p4.setPosition(1);
+                String pos = RePos(p4.getPosition());
+                System.out.println(pos);
+                b1.setImage(purple);
+                player4.setVisible(false);
+
+            }
+            else if (p4.getPosition()!=0 && !p4.isStat()){
+                p4.setPosition(p4.getPosition()+x);
+                // set image
+                if (p4.getPosition()==100){
+                    namePlayer4.setText("WINNER");
+                    p4.setStat(true);
+                }
+                if (isSnake(p4.getPosition())){
+                    Down(p4);
+                    // To do: set image here
+                }
+                else if (isLadder(p4.getPosition())){
+                    Up(p4);
+
+                    // set image here
+                }
+
+            }
+
             p4.setTurn(false);
             p1.setTurn(true);
             diceButton.setText(home.name1);
