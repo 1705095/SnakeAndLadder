@@ -90,6 +90,22 @@ public class Board {
 
     Image tran = new Image(new FileInputStream("src\\Image\\tran.png"));
 
+
+    Image redblue = new Image(new FileInputStream("src\\Image\\RedBlue.png"));
+    Image redpurple = new Image(new FileInputStream("src\\Image\\RedPurple.png"));
+    Image redyellow = new Image(new FileInputStream("src\\Image\\RedYellow.png"));
+
+    Image bluepurple = new Image(new FileInputStream("src\\Image\\BluePurple.png"));
+    Image blueyellow = new Image(new FileInputStream("src\\Image\\BlueYellow.png"));
+
+    Image yellowpurple = new Image(new FileInputStream("src\\Image\\YellowPurple.png"));
+
+    Image byp = new Image(new FileInputStream("src\\Image\\BYP.png"));
+    Image rbp = new Image(new FileInputStream("src\\Image\\RBP.png"));
+    Image rby = new Image(new FileInputStream("src\\Image\\RBY.png"));
+
+    Image all = new Image(new FileInputStream("src\\Image\\Four.png"));
+
     Home home;
     Player p1 = new Player("red");
     Player p2 = new Player("blue");
@@ -177,6 +193,50 @@ public class Board {
             x = 91;
         }
         return x;
+    }
+
+    void Overlap(Player player1, Player player2, Player player3, Player player4 )
+    {
+        if (player1.getPosition()==player2.getPosition()){
+            // set image red and blue
+            bb[player1.getPosition()].setImage(redblue);
+        }
+        if (player1.getPosition() == player3.getPosition()){
+            // set image red and yellow
+            bb[player1.getPosition()].setImage(redyellow);
+        }
+        if (player1.getPosition() == player4.getPosition()){
+            // set image red and purple
+            bb[player1.getPosition()].setImage(redpurple);
+        }
+        if (player2.getPosition()==player3.getPosition()){
+            // set image blue and yellow
+            bb[player2.getPosition()].setImage(blueyellow);
+        }
+        if (player2.getPosition() == player4.getPosition()){
+            // set image blue and purple
+            bb[player2.getPosition()].setImage(bluepurple);
+        }
+        if (player3.getPosition() == player4.getPosition()){
+            // set image yellow and purple
+            bb[player3.getPosition()].setImage(yellowpurple);
+        }
+        if (player1.getPosition() == player2.getPosition() && player1.getPosition() == player3.getPosition()){
+            // set image red blue yellow
+            bb[player1.getPosition()].setImage(rby);
+        }
+        if ( player1.getPosition()==player2.getPosition() && player1.getPosition() == player4.getPosition()){
+            // set image red, blue, purple
+            bb[player1.getPosition()].setImage(rbp);
+        }
+        if (player2.getPosition() == player3.getPosition() && player2.getPosition() == player4.getPosition()){
+            // set image blue, yellow, purple
+            bb[player2.getPosition()].setImage(byp);
+        }
+        if (player1.getPosition() == player2.getPosition() && player2.getPosition() == player3.getPosition() && player3.getPosition() == player4.getPosition()){
+            // set all four images
+            bb[player1.getPosition()].setImage(all);
+        }
     }
 
     @FXML
@@ -394,32 +454,46 @@ public class Board {
 
              if (p1.getPosition()==0 && x == 1) {
                 p1.setPosition(1);
-                bb[1].setImage(red);
+                bb[p1.getPosition()].setImage(red);
+                Overlap(p1,p2,p3,p4);
                 player1.setVisible(false);
 
             }
-            else if (p1.getPosition()!=0 && !p1.isStat()){
-                bb[p1.getPosition()].setImage(tran);
-                p1.setPosition(p1.getPosition()+x);
-                bb[p1.getPosition()].setImage(red);
-                if (p1.getPosition()==100){
-                        namePlayer1.setText("FINISHED");
-                        p1.setStat(true);
-                        bb[100].setImage(red);
-                }
-                if (isSnake(p1.getPosition())){
-                    bb[p1.getPosition()].setImage(tran);
-                    int t = Down(p1);
-                    bb[t].setImage(red);
-                }
-                else if (isLadder(p1.getPosition())){
-                    bb[p1.getPosition()].setImage(tran);
-                    int t = Up(p1);
-                    bb[t].setImage(red);
+             else if (p1.getPosition()==100){
+                 p1.setStat(true);
+                 Overlap(p1,p2,p3,p4);
 
-                }
+             }
+             else if (p1.getPosition()!=0 && !p1.isStat()) {
+                 if (p1.getPosition()+x > 100){
+                     // do nothing
 
-            }
+                 }
+                 else if (p1.getPosition() + x == 100){
+                     p1.setStat(true);
+                     Overlap(p1,p2,p3,p4);
+                 }
+                 else{
+                     bb[p1.getPosition()].setImage(tran);
+                     p1.setPosition(p1.getPosition() + x);
+                     bb[p1.getPosition()].setImage(red);
+                     Overlap(p1,p2,p3,p4);
+
+                     if (isSnake(p1.getPosition())){
+                         int n = Down(p1);
+                         bb[n].setImage(red);
+                         Overlap(p1,p2,p3,p4);
+                     }
+
+                     if (isLadder(p1.getPosition())){
+                         int n = Up(p1);
+                         bb[n].setImage(red);
+                         Overlap(p1,p2,p3,p4);
+                     }
+
+                 }
+
+             }
 
             p2.setTurn(true);
             diceButton.setText(home.name2);
@@ -430,32 +504,48 @@ public class Board {
 
             if (p2.getPosition()==0 && x == 1) {
                 p2.setPosition(1);
-                bb[1].setImage(blue);
+                bb[p2.getPosition()].setImage(blue);
+                Overlap(p1,p2,p3,p4);
                 player2.setVisible(false);
 
             }
-            else if (p2.getPosition()!=0 && !p2.isStat()){
-                bb[p2.getPosition()].setImage(tran);
-                p2.setPosition(p2.getPosition()+x);
-                bb[p2.getPosition()].setImage(blue);
-                if (p2.getPosition()==100){
-                    namePlayer2.setText("FINISHED");
+            else if (p2.getPosition()==100){
+                p2.setStat(true);
+                Overlap(p1,p2,p3,p4);
+
+            }
+            else if (p2.getPosition()!=0 && !p2.isStat()) {
+                if (p2.getPosition()+x > 100){
+                    // do nothing
+
+                }
+                else if (p2.getPosition() + x == 100){
                     p2.setStat(true);
-                    bb[100].setImage(blue);
+                    Overlap(p1,p2,p3,p4);
                 }
-                if (isSnake(p2.getPosition())){
+                else{
                     bb[p2.getPosition()].setImage(tran);
-                    int t = Down(p2);
-                    bb[t].setImage(blue);
-                }
-                else if (isLadder(p2.getPosition())){
-                    bb[p2.getPosition()].setImage(tran);
-                    int t = Up(p2);
-                    bb[t].setImage(blue);
+                    p2.setPosition(p2.getPosition() + x);
+                    bb[p2.getPosition()].setImage(blue);
+                    Overlap(p1,p2,p3,p4);
+
+                    if (isSnake(p2.getPosition())){
+                        int n = Down(p2);
+                        bb[n].setImage(blue);
+                        Overlap(p1,p2,p3,p4);
+                    }
+
+                    if (isLadder(p2.getPosition())){
+                        int n = Up(p2);
+                        bb[n].setImage(blue);
+                        Overlap(p1,p2,p3,p4);
+                    }
 
                 }
 
             }
+
+
 
             if (home.number==2){
                 p1.setTurn(true);
@@ -472,35 +562,52 @@ public class Board {
         else if(p3.isTurn()){
             p3.setTurn(false);
 
-
             if (p3.getPosition()==0 && x == 1) {
                 p3.setPosition(1);
-                bb[1].setImage(yellow);
+                bb[p3.getPosition()].setImage(yellow);
+                Overlap(p1,p2,p3,p4);
                 player3.setVisible(false);
 
             }
-            else if (p3.getPosition()!=0 && !p3.isStat()){
-                bb[p3.getPosition()].setImage(tran);
-                p3.setPosition(p3.getPosition()+x);
-                bb[p3.getPosition()].setImage(yellow);
-                if (p3.getPosition()==100){
-                    namePlayer3.setText("FINISHED");
-                    p3.setStat(true);
-                    bb[100].setImage(yellow);
-                }
-                if (isSnake(p3.getPosition())){
-                    bb[p3.getPosition()].setImage(tran);
-                   int t =  Down(p3);
-                   bb[t].setImage(yellow);
+            else if (p3.getPosition()==100){
+                p3.setStat(true);
+                Overlap(p1,p2,p3,p4);
+
+            }
+            else if (p3.getPosition()!=0 && !p3.isStat()) {
+                if (p3.getPosition()+x > 100){
+                    // do nothing
 
                 }
-                else if (isLadder(p3.getPosition())){
+                else if (p3.getPosition() + x == 100){
+                    p3.setStat(true);
+                    bb[100].setImage(yellow);
+                    Overlap(p1,p2,p3,p4);
+                }
+                else{
                     bb[p3.getPosition()].setImage(tran);
-                    int t = Up(p3);
-                    bb[t].setImage(yellow);
+                    p3.setPosition(p3.getPosition() + x);
+                    bb[p3.getPosition()].setImage(yellow);
+                    Overlap(p1,p2,p3,p4);
+
+                    if (isSnake(p3.getPosition())){
+                        int n = Down(p3);
+                        bb[n].setImage(yellow);
+                        Overlap(p1,p2,p3,p4);
+                    }
+
+                    if (isLadder(p3.getPosition())){
+                        int n = Up(p3);
+                        bb[n].setImage(yellow);
+                        Overlap(p1,p2,p3,p4);
+                    }
+
                 }
 
             }
+
+
+
 
             if (home.number == 3){
                 p1.setTurn(true);
@@ -513,36 +620,50 @@ public class Board {
         }
         else if (p4.isTurn()){
 
-
             if (p4.getPosition()==0 && x == 1) {
                 p4.setPosition(1);
-                String pos = RePos(p4.getPosition());
-                System.out.println(pos);
-                bb[1].setImage(purple);
+                bb[p4.getPosition()].setImage(purple);
+                Overlap(p1,p2,p3,p4);
                 player4.setVisible(false);
 
             }
-            else if (p4.getPosition()!=0 && !p4.isStat()){
-                bb[p4.getPosition()].setImage(tran);
-                p4.setPosition(p4.getPosition()+x);
-                bb[p4.getPosition()].setImage(purple);
-                if (p4.getPosition()==100){
-                    namePlayer4.setText("WINNER");
+            else if (p4.getPosition()==100){
+                p4.setStat(true);
+                Overlap(p1,p2,p3,p4);
+
+            }
+            else if (p4.getPosition()!=0 && !p4.isStat()) {
+                if (p4.getPosition()+x > 100){
+                    // do nothing
+
+                }
+                else if (p4.getPosition() + x == 100){
                     p4.setStat(true);
                     bb[100].setImage(purple);
+                    Overlap(p1,p2,p3,p4);
                 }
-                if (isSnake(p4.getPosition())){
+                else{
                     bb[p4.getPosition()].setImage(tran);
-                    int t = Down(p4);
-                    bb[t].setImage(purple);
-                }
-                else if (isLadder(p4.getPosition())){
-                    bb[p4.getPosition()].setImage(tran);
-                    int t = Up(p4);
-                    bb[t].setImage(purple);
+                    p4.setPosition(p4.getPosition() + x);
+                    bb[p4.getPosition()].setImage(purple);
+                    Overlap(p1,p2,p3,p4);
+
+                    if (isSnake(p4.getPosition())){
+                        int n = Down(p4);
+                        bb[n].setImage(purple);
+                        Overlap(p1,p2,p3,p4);
+                    }
+
+                    if (isLadder(p4.getPosition())){
+                        int n = Up(p4);
+                        bb[n].setImage(purple);
+                        Overlap(p1,p2,p3,p4);
+                    }
+
                 }
 
             }
+
 
             p4.setTurn(false);
             p1.setTurn(true);
