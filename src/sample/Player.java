@@ -5,12 +5,14 @@ public class Player {
         private String color;
         private boolean stat;
         private boolean turn;
+        private  boolean inGame;
 
     public Player(String color) {
         this.position = 0;
         this.color = color;
         this.stat = false;
         this.turn = false;
+        this.inGame = true;
     }
 
     public int getPosition() {
@@ -40,4 +42,8 @@ public class Player {
     public void setTurn(boolean turn) { this.turn = turn; }
 
     public boolean isTurn() { return  turn; }
+
+    public boolean isInGame() {
+        return inGame;
+    }
 }
