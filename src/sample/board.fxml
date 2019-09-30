@@ -36,7 +36,7 @@
             <Label fx:id="namePlayer2" layoutX="1165.0" layoutY="296.0" prefHeight="31.0" prefWidth="96.0" />
             <Label fx:id="namePlayer3" layoutX="1165.0" layoutY="351.0" prefHeight="31.0" prefWidth="96.0" />
             <Label fx:id="namePlayer4" layoutX="1165.0" layoutY="420.0" prefHeight="31.0" prefWidth="96.0" />
-            <Button fx:id="startButton" layoutX="358.0" layoutY="389.0" mnemonicParsing="false" onAction="#StartGame" prefHeight="62.0" prefWidth="291.0" text="Start Game">
+            <Button fx:id="startButton" layoutX="358.0" layoutY="389.0" mnemonicParsing="false" onAction="#StartGame" prefHeight="62.0" prefWidth="291.0" stylesheets="@simpleCSS.css" text="Start Game">
                <font>
                   <Font size="27.0" />
                </font>
