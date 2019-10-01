@@ -367,7 +367,7 @@ public class Board {
 
              if (p1.getPosition()==0 && x == 1) {
                 p1.setPosition(1);
-                bb[p1.getPosition()].setImage(red);
+                rr[p1.getPosition()].setImage(red);
                 player1.setVisible(false);
 
             }
@@ -384,18 +384,20 @@ public class Board {
                      p1.setStat(true);
                  }
                  else{
-                     bb[p1.getPosition()].setImage(tran);
+                     rr[p1.getPosition()].setImage(tran);
                      p1.setPosition(p1.getPosition() + x);
-                     bb[p1.getPosition()].setImage(red);
+                     rr[p1.getPosition()].setImage(red);
 
                      if (isSnake(p1.getPosition())){
+                         rr[p1.getPosition()].setImage(tran);
                          int n = Down(p1);
-                         bb[n].setImage(red);
+                         rr[n].setImage(red);
                      }
 
                      if (isLadder(p1.getPosition())){
+                         rr[p1.getPosition()].setImage(tran);
                          int n = Up(p1);
-                         bb[n].setImage(red);
+                         rr[n].setImage(red);
                      }
 
                  }
@@ -553,7 +555,7 @@ public class Board {
                     if (isLadder(p4.getPosition())){
                         pp[p4.getPosition()].setImage(tran);
                         int n = Up(p4);
-                        bb[n].setImage(purple);
+                        pp[n].setImage(purple);
                     }
 
                 }
